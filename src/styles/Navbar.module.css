@@ -1,0 +1,49 @@
+.navbar {
+  background: #111;
+  border-bottom: 4px solid;
+  border-image: linear-gradient(90deg, #FF6700, #FFE564) 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: 250px;          /* adjust based on your logo height */
+  width: auto;
+  cursor: pointer;
+  border: #fff;
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.03);
+  /* Adds a slight zoom effect when hovered */
+}
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+}
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.logoContainer {
+  position: relative;
+  height: 100px;     /* Desired logo height */
+  width: 120px;     /* Desired logo width */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  object-fit: contain;
+}
+

@@ -10,10 +10,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="pageContainer">
         <TopHeader />
         <Navbar />
-        {children}
+        <main className="content">{children}</main>
         <Footer />
       </body>
     </html>

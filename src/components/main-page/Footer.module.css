@@ -1,0 +1,32 @@
+/* --- Converted to Dark Theme with Yellow Accents --- */
+.footer {
+  background: #111827; /* CHANGED: To consistent main background */
+  border-top: 3px solid #facc15; /* CHANGED: Was #ffe564, now logo yellow */
+  min-height: 68px;
+  box-shadow: 0 -3px 15px #0000004d; /* CHANGED: Simplified dark shadow */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.2rem 1.3rem 1.2rem;
+}
+
+.footerContent {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.copyright {
+  font-size: 1.12rem;
+  color: #9ca3af; /* CHANGED: Was yellow, now light gray for a cleaner look */
+  text-align: center;
+  letter-spacing: 0.018em;
+}
+
+.brand {
+  color: #facc15; /* CHANGED: Was orange #FFAF36, now logo yellow */
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}

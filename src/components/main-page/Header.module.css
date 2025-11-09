@@ -1,0 +1,148 @@
+/* --- Converted to Dark Theme with Yellow Accents --- */
+.header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  /* Using your dark, blurred background - this is a great choice! */
+  background: rgba(24, 24, 24, 0.94);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 2.5vw;
+  border-bottom: 3px solid #facc15; /* CHANGED: Was #ffaf36 (orange) */
+  box-shadow: 0 6px 24px 0 #1818182a;
+  backdrop-filter: blur(5px);
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  height: 48px;
+  width: auto;
+  border-radius: 9px;
+  box-shadow: 0 1px 8px #0004;
+  margin-right: 0.8rem;
+}
+
+.navLinks {
+  display: flex;
+  gap: 1.7rem;
+  font-size: 1.13em;
+  font-weight: 500;
+  color: #d1d5db; /* CHANGED: Was #fffadf, now consistent light gray */
+}
+
+.navLinks a {
+  color: #d1d5db; /* CHANGED: Was #fffadf */
+  text-decoration: none;
+  transition: color 0.16s, background-color 0.16s;
+  letter-spacing: 0.01em;
+  padding: 0.3em 0.6em;
+  border-radius: 8px;
+}
+
+.navLinks a:hover,
+.navLinks a:focus {
+  color: #facc15; /* CHANGED: Was #ffe564 */
+  background: #242309c9; /* Keeping your dark yellow hover bg */
+}
+
+.ctas {
+  display: flex;
+  gap: 0.9rem;
+}
+
+/* --- UNIFIED BUTTON STYLING --- */
+
+.ctaButton {
+  background: #facc15; /* CHANGED: Was #ffe600 */
+  color: #111827; /* CHANGED: Was #141414, for contrast */
+  font-size: 1.06em;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.5em;
+  padding: 0.6em 1.5em;
+  text-decoration: none;
+  transition: background-color 0.18s, color 0.18s, box-shadow 0.16s;
+  box-shadow: 0 2px 6px #32320566;
+  cursor: pointer;
+}
+.ctaButton:hover {
+  background: #eab308; /* CHANGED: Was #fff376, now darker yellow */
+}
+
+/* CHANGED: This orange button is now styled as the primary yellow button
+   This will fix the "Find My Race" button from your screenshot for consistency.
+*/
+.ctaButtonOrange {
+  background: #facc15;
+  color: #111827;
+  font-size: 1.06em;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.5em;
+  padding: 0.6em 1.3em;
+  text-decoration: none;
+  transition: background-color 0.18s, color 0.18s, box-shadow 0.16s;
+  box-shadow: 0 2px 6px #32320533;
+  cursor: pointer;
+}
+.ctaButtonOrange:hover {
+  background: #eab308;
+  color: #111827; /* CHANGED: Keep dark text */
+}
+
+/* CHANGED: This gradient button is also styled as the primary yellow button
+   for brand consistency.
+*/
+.ctaButtonGradient {
+  background: #facc15;
+  color: #111827;
+  font-size: 1.12em;
+  font-weight: 900;
+  border: none;
+  border-radius: 0.6em;
+  padding: 0.65em 1.5em;
+  text-decoration: none;
+  box-shadow: 0 2px 12px #facc1588; /* CHANGED: Shadow to yellow */
+  transition: box-shadow 0.16s, background-color 0.13s, color 0.17s;
+  cursor: pointer;
+}
+.ctaButtonGradient:hover {
+  background: #eab308;
+  color: #111827;
+  box-shadow: 0 6px 20px #facc156b; /* CHANGED: Shadow to yellow */
+}
+
+/* --- Brand Name Styling --- */
+.logoArea {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.logo {
+  height: 52px; /* Adjust size as needed */
+  width: auto;
+  filter: drop-shadow(0 2px 8px rgba(250, 204, 21, 0.3)); /* CHANGED: Shadow to logo yellow */
+  transition: transform 0.2s;
+}
+
+.logo:hover {
+  transform: scale(1.08);
+}
+
+.brandName {
+  font-size: 1.7rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  /* This gradient is a strong brand choice. Just updated the yellow. */
+  background: linear-gradient(90deg, #ff6700 0%, #facc15 100%); /* CHANGED: Was #ffe564 */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

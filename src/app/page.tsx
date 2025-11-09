@@ -1,13 +1,12 @@
-import Footer from "../components/Footer";
-import HeroSection from "../components/HeroSection";
+"use client";
 
+import HeroSection from "../components/main-page/HeroSection";
 import "./globals.css";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
-      {/* Add more sections/components here */}
     </>
   );
 }

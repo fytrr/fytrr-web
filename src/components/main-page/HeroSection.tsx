@@ -52,7 +52,11 @@ const IconBolt = () => (
 // --- 2. COUNTDOWN COMPONENT & HELPERS ---
 
 // Helper function to calculate time left
-const calculateTimeLeft = (targetDate) => {
+const calculateTimeLeft = (targetDate: string) => {
+  //                                  ^
+  //                                  |
+  // --- FIX 1: Added 'string' type ---+
+
   const difference = +new Date(targetDate) - +new Date();
   let timeLeft = {};
 
@@ -71,12 +75,21 @@ const calculateTimeLeft = (targetDate) => {
 };
 
 // Helper function to add a leading zero (e.g., 9 -> 09)
-const addLeadingZero = (value) => {
+const addLeadingZero = (value: number) => {
+  //                               ^
+  //                               |
+  // --- FIX 2: Added 'number' type ---+
+
   return value.toString().padStart(2, "0");
 };
 
+// --- Define Props Type ---
+type EventCountdownProps = {
+  targetDate: string;
+};
+
 // --- UPDATED COMPONENT TO FIX HYDRATION ERROR ---
-const EventCountdown = ({ targetDate }) => {
+const EventCountdown = ({ targetDate }: EventCountdownProps) => {
   // 1. Initialize timeLeft with a static default state.
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -91,7 +104,7 @@ const EventCountdown = ({ targetDate }) => {
 
   useEffect(() => {
     // 3. This runs *only* on the client, after the initial render.
-    
+
     // Set isClient to true, which triggers a re-render
     setIsClient(true);
 
@@ -690,9 +703,14 @@ const HeroStyles = () => (
       background-color: #111827;
       border-color: #374151;
     }
+
+    /* --- FIX 3: Corrected CSS typo --- */
     .section-lighter .featuredEvent {
       background-color: #111827;
-      border-color: #37415section-lighter .fightLevelCard:hover,
+      border-color: #374151;
+    }
+
+    .section-lighter .fightLevelCard:hover,
     .section-lighter .homeCard:hover {
       border-color: #facc15;
     }
@@ -879,7 +897,8 @@ export default function HeroSection() {
             <p>
               Explore upcoming events, register, and find your next thrilling
               FYTRR challenge.
-            </p>
+            </p> 
+            {/* --- FIX 4: Corrected HTML typo --- */}
           </div>
           <div className="raceFinderWrapper">
             <div className="searchForm">

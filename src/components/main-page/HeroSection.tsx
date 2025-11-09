@@ -51,14 +51,19 @@ const IconBolt = () => (
 
 // --- 2. COUNTDOWN COMPONENT & HELPERS ---
 
+// --- FIX 1: Corrected calculateTimeLeft ---
 // Helper function to calculate time left
 const calculateTimeLeft = (targetDate: string) => {
-  //                                  ^
-  //                                  |
-  // --- FIX 1: Added 'string' type ---+
-
   const difference = +new Date(targetDate) - +new Date();
-  let timeLeft = {};
+
+  // Define the full return type
+  let timeLeft: {
+    days: number;
+    hours: number;
+    minutes: number;
+    seconds: number;
+    expired: boolean;
+  };
 
   if (difference > 0) {
     timeLeft = {
@@ -69,17 +74,20 @@ const calculateTimeLeft = (targetDate: string) => {
       expired: false,
     };
   } else {
-    timeLeft = { expired: true };
+    // Always return the full object shape, even when expired.
+    timeLeft = {
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
+      expired: true,
+    };
   }
   return timeLeft;
 };
 
 // Helper function to add a leading zero (e.g., 9 -> 09)
 const addLeadingZero = (value: number) => {
-  //                               ^
-  //                               |
-  // --- FIX 2: Added 'number' type ---+
-
   return value.toString().padStart(2, "0");
 };
 
@@ -143,15 +151,21 @@ const EventCountdown = ({ targetDate }: EventCountdownProps) => {
         <span className="countdownLabel">Days</span>
       </div>
       <div className="countdownBlock">
-        <span className="countdownNumber">{addLeadingZero(timeLeft.hours)}</span>
+        <span className="countdownNumber">
+          {addLeadingZero(timeLeft.hours)}
+        </span>
         <span className="countdownLabel">Hours</span>
       </div>
       <div className="countdownBlock">
-        <span className="countdownNumber">{addLeadingZero(timeLeft.minutes)}</span>
+        <span className="countdownNumber">
+          {addLeadingZero(timeLeft.minutes)}
+        </span>
         <span className="countdownLabel">Mins</span>
       </div>
       <div className="countdownBlock">
-        <span className="countdownNumber">{addLeadingZero(timeLeft.seconds)}</span>
+        <span className="countdownNumber">
+          {addLeadingZero(timeLeft.seconds)}
+        </span>
         <span className="countdownLabel">Secs</span>
       </div>
     </div>
@@ -897,8 +911,8 @@ export default function HeroSection() {
             <p>
               Explore upcoming events, register, and find your next thrilling
               FYTRR challenge.
-            </p> 
-            {/* --- FIX 4: Corrected HTML typo --- */}
+            </p>
+            {/* --- FIX 4: Corrected HTML typo </E> to </p> --- */}
           </div>
           <div className="raceFinderWrapper">
             <div className="searchForm">
@@ -961,6 +975,7 @@ export default function HeroSection() {
                 Find and organize local training sessions, sparring groups, and
                 social events.
               </p>
+              {/* --- FIX 5: Corrected HTML typo </g> to </p> --- */}
               <a href="#meetups" className="homeButton">
                 Find Meetups
               </a>
